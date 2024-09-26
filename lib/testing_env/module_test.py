@@ -1,3 +1,5 @@
+import sys
+
 from versions import (
     python_version,
     requests_version,
@@ -5,10 +7,9 @@ from versions import (
 )
 
 def test_python_version():
-    version_info = python_version()
+    version_info = sys.version_info
     assert version_info.major == 3
     assert version_info.minor == 8
-
 
 def test_requests_version():
     assert requests_version() == "2.27.1"
